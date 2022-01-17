@@ -1,0 +1,61 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Streamline Integration}\label{chapter:streamlines}
+streamline vs streakline vs pathline
+what is used in the following (eval vs network)
+\section{General Methodology}
+Seed initial points:
+Generate next set of points
+repeat
+result is Tensor of Shape x
+\section{Seeding Strategy}
+different strategies to capture more "interesting" parts of the field
+good coverage
+\subsection{Uniform Random}
+even coverage
+can have many points in less "interesting" regions
+\subsection{Uniform Deterministic}
+guaranteed very even coverage even with few points
+good for testing
+\subsection{Importance Sampling using local Entropy}
+How is Entropy calculated here?:
+  Sphere of equal regions
+  neighborhood size
+  Use vector length or not?
+Rejection Sampling
+  intensity
+  min probability
+uneven coverage, focus on "important" regions
+\subsection{Comparison}
+On Speed and Accuracy
+
+\section{Integration Methods}
+
+\subsection{Euler-Integration}
+procedure
+no additional samples needed
+\subsection{Runge-Kutta}
+some additional samples
+error is O()
+\subsection{Runge-Kutta-Fehlberg}
+adaptive stepsize
+more accurate
+requires higher number of samples
+individual?
+similarity might suffer under adaptive stepsize
+\chapter{Streamline Similarity}
+\section{Prior Considerations}
+Masking, Time-relation (streamline vs pathline), adaptive stepsize
+\section{L2-Distance}
+Procedure, Limitations (stepsize, length, mask)
+decent since comparing streamlines with same start location
+\section{Bag-Of-Features}
+instead of distance generate a set of features for each point on the streamline
+compare these using clustered representative feature vectors
+\subsection{Choice of Features}
+
+\subsection{Spatially Sensitive Bag-of-Features}
+\section{Comparison}
+On Speed and Accuracy
+(Look up Error estimation)
