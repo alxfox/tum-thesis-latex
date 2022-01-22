@@ -2,23 +2,56 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Streamline Integration}\label{chapter:streamlines}
-streamline vs streakline vs pathline
-what is used in the following (eval vs network)
+The approach to the generation of streamlines, plays an important role in achieving good results of the detected similarity between the reference and network representations.
+Different seeding strategies as well as integration methods, each come with their own advantages and disadvantages.
+
+We chose to focus on different approaches for the creation and comparison of streamlines, as opposed to pathlines or streaklines.
+This means each sample taken during the generation of a streamline is taken from the same timestep. 
+% add math p_n+1 = p_n + f(t, p_n)
+In contrast for a streakline each velocity sampled for the streamline would be on a timestep later than the previous.
+% add math p_n+1 = p_n + f(t+h, p_n)
+A comparison of streamlines, streaklines and pathlines can be seen in X.
+% streamline vs streakline vs pathline
+% what is used in the following (eval vs network)
 \section{General Methodology}
+The generation of streamlines is generally divided into two steps: Seeding and Integration
+During seeding, the initial points in space R3 and time R1 for the streamlines are generated.
+The seeding method affects coverage of the velocity field. An even coverage can be achieved using a uniform random/deterministic approach. 
+Alternatively an approach using importance sampling can assist with highlighting more salient regions of the field.
+
+The chosen integration method affects the accuracy of the streamlines according to the chosen step size.
+More advanced integration methods like rk45 will net a higher accuracy using the same step size in exchange for higher computational requirements.
+The used methods are highlighted in more detail in the following sections.
 Seed initial points:
 Generate next set of points
 repeat
 result is Tensor of Shape x
 \section{Seeding Strategy}
-different strategies to capture more "interesting" parts of the field
-good coverage
+The choice of seeding strategy can have a profound effect on streamline coverage and legibility.
+Choosing a good seeding strategy to cover large portions of the field, as well as in particular highlighting singularities and regions is an area of active research. Examples include.
+Since the purpose of our SRN is the visual representation of the original field, these considerations fit with our goal.
+The following methods focus on spatial distribution, as opposed to distribution among timesteps. 
+The latter will be discussed in (later section/further research)
 \subsection{Uniform Random}
-even coverage
-can have many points in less "interesting" regions
+The most naive approach to seeding is to use a uniform random distribution.
+%math where x ~ 0-1 for R^3
+By definition this approach has a very even distribution of seed points. An example of it can be seen in x.
+It does however lack any effect towards highlighting more salient regions especially during visualization.
+As such, a sparse field with regions of low interest might generate a significant number of streamlines with low movement.
 \subsection{Uniform Deterministic}
-guaranteed very even coverage even with few points
-good for testing
+During visualization the number of seed points has to be kept relatively low to keep visibility high. 
+As such the actual distribution of streamlines when using a uniform random method might be less uniform than desired.
+A deterministic, evenly spaced distribution can be used in this case.
+%math 
+An example of this distribution can be seen in.
+In general this approach is mostly useful for testing. 
+In comparisons (especially if used during training) a random distribution is more desirable in order to reduce overfitting.
 \subsection{Importance Sampling using local Entropy}
+Our final approach to seeding is generating a local entropy field at each time step, which can then be applied in importance sampling.
+An entropy field can help highlight more salient regions in the field and increase the number of seed points generated in these areas.
+
+The generation of the entropy field is a preprocessing step which has to be applied to each time step of the reference that we want to generate seeds on.
+\subsubsection{Generation of the Entropy field}
 How is Entropy calculated here?:
   Sphere of equal regions
   neighborhood size

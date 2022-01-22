@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.31)  17 JAN 2022 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.31)  22 JAN 2022 18:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,19 +1112,19 @@ chapter 3.
 [3
 
 
-] [4]
+] [4] [5]
 chapter 4.
-) (chapters/03_network.tex [5
+) (chapters/03_network.tex [6
 
 
 ]
 chapter 5.
-) (chapters/04_results.tex [6
+) (chapters/04_results.tex [7
 
 
 ]
 chapter 6.
-) [7
+) [8
 
 
 ]
@@ -1133,7 +1133,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 50.
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [8
+ [9
 
 
 ]
@@ -1142,13 +1142,13 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 51.
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [9
+ [10
 
 
 ]
 chapter without number
 No complaints by nag.
-[10
+[11
 
 
 ] (main.aux)
@@ -1159,17 +1159,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47216 strings out of 478659
- 1075455 string characters out of 2845919
+ 47285 strings out of 478659
+ 1076382 string characters out of 2845919
  2061416 words of memory out of 3000000
- 64358 multiletter control sequences out of 15000+600000
- 441011 words of font info for 164 fonts, out of 8000000 for 9000
+ 64368 multiletter control sequences out of 15000+600000
+ 444133 words of font info for 206 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  115i,8n,109p,10641b,2241s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/fuchs/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/fuchs/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/fuchs/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/fuchs/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (17 pages, 102049 bytes).
+Output written on main.pdf (18 pages, 106533 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
+ 271 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
  69381 words of extra memory for PDF output out of 74296 (max. 10000000)
 
